@@ -2,20 +2,45 @@
 .navigation {
     border-bottom: 2px dashed @navigation-border;
     padding: 20px 0;
+    @media @phone {
+        padding: 15px 0;
+    }
     .inner-nav {
         max-width: 800px;
         display: flex;
         justify-content: space-between;
         align-items: center;  
         margin: 0 auto;
+        h1 {
+            font-size: 4rem;
+            @media @phone {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media @phone {
+            flex-direction: column;
+        }
         
         nav {
             text-decoration: none;
+
+            @media @phone {
+                padding-top: 1%;
+            }
             
             a {
               margin-left: 25px;
-              font-size: 1.8rem;
+              font-size: 1.6rem;
+              color: black;
               text-decoration: none;
+              &:hover {
+                  color: @navigation-border;
+              }
+              @media @phone {
+                  margin-left: 60px;
+              }
             }
         
             .firstLink {
