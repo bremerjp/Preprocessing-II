@@ -1,6 +1,6 @@
 // Mixins in here
 
-.custom-button(@bg-color, @size, @font-color){
+.custom-button(@bg-color, @size, @color){
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,16 +9,20 @@
     width: @size;
     height: 45px;
     font-size: 1.8rem;
-    border-radius: 10px;
-    color:@font-color;
+    border-radius: 15px;
+    color:@color;
     
     &:hover{
-      background-color:@font-color;
-      color:@bg-color;
+      background-color: @color;
+      color: @bg-color;
       border: 2px solid @bg-color;
     }
     @media @phone {
         width: 95%;
-        
     }
+  }
+
+  .zoom-animation(@duration) {
+    animation-duration: @duration;
+    animation-name: zoomIn;
   }
